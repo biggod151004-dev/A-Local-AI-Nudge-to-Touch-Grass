@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Trailwise creates tiny, doable outdoor adventures with a local open-weight AI model." />
+    <title>Trailwise — Go a little farther</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="./styles.css" />
+  </head>
+  <body>
+    <div class="grain"></div>
+    <header class="topbar">
+      <a class="brand" href="#top"><span class="brand-mark">✳</span> trailwise</a>
+      <div class="status-pill"><span class="status-dot"></span><span id="model-status">Local AI ready</span></div>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">A pocket-sized nudge outside</p>
+          <h1>Make your next<br /><em>hour</em> count.</h1>
+          <p class="hero-text">Trailwise turns your time, energy, and surroundings into a small adventure you can actually do today.</p>
+          <div class="open-note"><span>◎</span><span><strong>Private by design.</strong> Your prompt stays in this browser.</span></div>
+        </div>
+        <div class="hero-orbit" aria-hidden="true">
+          <div class="sun"></div><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+          <span class="leaf leaf-one">✦</span><span class="leaf leaf-two">✦</span><span class="leaf leaf-three">✦</span>
+          <div class="orbit-label">less scrolling<br /><strong>more noticing</strong></div>
+        </div>
+      </section>
+
+      <section class="workspace" aria-label="Adventure planner">
+        <div class="panel form-panel">
+          <div class="panel-heading"><span class="step">01</span><div><p class="label">Set the scene</p><h2>What do you have today?</h2></div></div>
+          <form id="adventure-form">
+            <label>Where are you?<input id="place" name="place" value="Bengaluru" placeholder="Neighbourhood, park, or trail" required /></label>
+            <div class="field-row">
+              <label>Time available<select id="time" name="time"><option value="20 minutes">20 minutes</option><option value="45 minutes" selected>45 minutes</option><option value="90 minutes">90 minutes</option><option value="half a day">Half a day</option></select></label>
+              <label>Energy level<select id="energy" name="energy"><option value="low">Low and gentle</option><option value="medium" selected>Medium</option><option value="high">Ready to roam</option></select></label>
+            </div>
+            <label>What sounds good?<select id="mood" name="mood"><option value="quiet noticing">Quiet noticing</option><option value="moving my body">Moving my body</option><option value="making something">Making something</option><option value="meeting people">Meeting people</option></select></label>
+            <div class="field-row compact"><label class="check-row"><input type="checkbox" id="no-signal" /> <span>No signal expected</span></label><label class="check-row"><input type="checkbox" id="with-friend" /> <span>I’m bringing a friend</span></label></div>
+            <button class="primary-button" type="submit"><span>Plan my micro-adventure</span><span class="button-arrow">↗</span></button>
+          </form>
+          <p class="model-footnote"><span class="spark">✦</span> Powered by FLAN-T5-small, an open-weight model running in your browser.</p>
+        </div>
+
+        <div class="panel result-panel" id="result-panel">
+          <div class="empty-state" id="empty-state"><div class="empty-icon">◌</div><p class="label">Your field notes</p><h2>A little plan,<br />made for you.</h2><p>Fill in the left side and we’ll make a tiny adventure that starts with your front door.</p><div class="empty-line"></div><span>Tip: the best plans leave room for surprise.</span></div>
+          <div class="result-content hidden" id="result-content">
+            <div class="result-top"><div><p class="label">Your field notes</p><h2 id="result-title">A small adventure</h2></div><span class="result-badge">LOCAL AI</span></div>
+            <p class="result-intro" id="result-intro"></p>
+            <div class="plan-card"><div class="plan-card-head"><span>THE PLAN</span><span id="plan-time">45 MIN</span></div><h3 id="plan-name"></h3><p id="plan-description"></p><div class="plan-steps" id="plan-steps"></div></div>
+            <div class="safety-note"><span>✦</span><p><strong>Bring back one detail.</strong> A colour, a sound, a question, or a leaf shape. You don’t need to document the whole thing.</p></div>
+            <button class="secondary-button" id="reset-button" type="button">Make another plan <span>↻</span></button>
+          </div>
+        </div>
+      </section>
+
+      <section class="principles"><p class="eyebrow">The idea</p><div class="principles-grid"><h2>The screen should be<br /><em>the shortest part</em><br />of the experience.</h2><div class="principle-copy"><p>Trailwise is intentionally small. It gives you enough direction to leave, then gets out of the way.</p><div class="principle-list"><div><span>01</span><p><strong>Local first</strong><br />Your prompt is processed in this tab.</p></div><div><span>02</span><p><strong>Small enough to start</strong><br />Every plan fits the time you have.</p></div><div><span>03</span><p><strong>Open to change</strong><br />Swap the model, improve the prompt, make it yours.</p></div></div></div></div></section>
+    </main>
+    <footer><span>trailwise / touch grass</span><span>made with open source AI <span class="footer-spark">✳</span></span></footer>
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
